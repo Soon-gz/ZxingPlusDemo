@@ -14,7 +14,7 @@
 * 3：我将二维码的扫描和图片解析，生成逻辑封装了在抽象父类BaseQRScanActivity，同事将
 XML布局进行了分离。可以高扩展。自定义布局，自己设定界面以及扫描动画背景设定。为了方便调用，在抽象基础上再次抽象出一个默认的扫描界面，该界面有二维码扫描，闪光灯，图片解析三个基本功能。考虑到每个项目都有不同需求，所以将各个控件都通过get方法暴露给调用层，可以修改图片颜色背景，或者隐藏。
 然后把扫描结果暴露给调用层。给出示例代码
-` `` java
+```java
 public class QRCodeScanAtivity extends DefaultQRScanActivity {
 
     //对控件的自定义，可以修改隐藏默认控件
@@ -39,9 +39,9 @@ public class QRCodeScanAtivity extends DefaultQRScanActivity {
         finish();
     }
 }
-` ``
+```
 但是记住6.0的要手动申请权限
-` `` java
+```java
  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,5 +51,5 @@ public class QRCodeScanAtivity extends DefaultQRScanActivity {
         //6.0加上动态权限申请，需要在外面Acitvity做申请
         PermissionUtils.getInstance().requestPermission(this);
     }
-` ``
+```
 感谢各位对我的支持，觉得好用请给个star，欢迎fork。
