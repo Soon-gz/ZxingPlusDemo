@@ -11,11 +11,13 @@ import com.example.qrlibrary.qrcode.activity.DefaultQRScanActivity;
 
 public class QRCodeScanAtivity extends DefaultQRScanActivity {
 
+    //对控件的自定义，可以修改隐藏默认控件
     @Override
     protected void initCustomViewAndEvents() {
 
     }
 
+    //扫描图片结果解析回调 recode二维码字符串
     @Override
     protected void onAlbumResult(int requestCode, int resultCode, String recode) {
         Bundle bundle = new Bundle();
@@ -23,7 +25,7 @@ public class QRCodeScanAtivity extends DefaultQRScanActivity {
         startActivity(new Intent(QRCodeScanAtivity.this,ResultActivity.class).putExtras(bundle));
         finish();
     }
-
+    //二维码图片解析回调  rawResult 二维码字符串
     @Override
     protected void handleDecodeResult(String rawResult, Bundle bundle) {
         bundle.putString("result",rawResult);

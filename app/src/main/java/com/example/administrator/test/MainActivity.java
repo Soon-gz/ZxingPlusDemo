@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.qrlibrary.qrcode.utils.PermissionUtils;
 import com.example.qrlibrary.qrcode.utils.QRCodeUtil;
 
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         test = (TextView) findViewById(R.id.test);
         imageView = (ImageView) findViewById(R.id.image1);
+        //6.0加上动态权限申请，需要在外面Acitvity做申请
+        PermissionUtils.getInstance().requestPermission(this);
     }
 
     public void click(View view){
