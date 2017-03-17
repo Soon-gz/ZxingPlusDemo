@@ -1,6 +1,7 @@
 package com.example.administrator.test;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
             //扫描二维码
             case R.id.scan:
                 startActivity(new Intent(this,QRCodeScanAtivity.class));
+                break;
+            //生成二维码带图标,这和图片大小相关，默认取3/4显示
+            case R.id.scorewithlogo:
+                imageView.setImageBitmap(QRCodeUtil.createWithLogo(test.getText().toString(), BitmapFactory.decodeResource(getResources(), R.drawable.timg)));
+                break;
+            //生成带图标二维码,自设置大小  取 multipart/divisor显示
+            case R.id.custom_scorewithlogo:
+                imageView.setImageBitmap(QRCodeUtil.createWithLogo(test.getText().toString(), BitmapFactory.decodeResource(getResources(), R.drawable.timg),1,4));
                 break;
         }
     }

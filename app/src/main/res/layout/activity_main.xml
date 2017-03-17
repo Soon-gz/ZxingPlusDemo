@@ -23,15 +23,29 @@
         android:layout_height="wrap_content"
         android:onClick="click"
         android:text="生成二维码"/>
-    <ImageView
-        android:id="@+id/image1"
+    <Button
+        android:id="@+id/scorewithlogo"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/scan_mask"/>
+        android:onClick="click"
+        android:text="生成二维码带图标"/>
+    <Button
+        android:id="@+id/custom_scorewithlogo"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="生成二维码带自定义大小图标"/>
     <Button
         android:id="@+id/scan"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="click"
         android:text="开始扫描"/>
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
 </LinearLayout>
