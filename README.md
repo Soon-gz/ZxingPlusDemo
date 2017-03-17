@@ -52,4 +52,27 @@ public class QRCodeScanAtivity extends DefaultQRScanActivity {
         PermissionUtils.getInstance().requestPermission(this);
     }
 ```
+
+##版本更新
+#1.1.4
+
+新加入功能，生成带图标二维码，图标默认是取3/4显示，可自定义大小。
+
+#使用介绍
+```Java
+ //生成二维码带图标,这和图片大小相关，默认取3/4显示
+            case R.id.scorewithlogo:
+                imageView.setImageBitmap(QRCodeUtil.createWithLogo(test.getText().toString(), BitmapFactory.decodeResource(getResources(), R.drawable.timg)));
+                break;
+```
+```Java
+//生成带图标二维码,自设置大小  取 multipart/divisor显示
+            case R.id.custom_scorewithlogo:
+                imageView.setImageBitmap(QRCodeUtil.createWithLogo(test.getText().toString(), BitmapFactory.decodeResource(getResources(), R.drawable.timg),1,4));
+                break;
+```
+具体使用参照demo。
+
+
+
 感谢各位对我的支持，觉得好用请给个star，欢迎fork。
